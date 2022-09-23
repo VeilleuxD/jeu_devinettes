@@ -2,7 +2,7 @@
 nom: David A. Veilleux
 Groupe: 405
 Description: Un petit jeu ou le joueur doit deviner le nombre choisi aléatoirement entre 1 et 100.
-
+tu peut jouer indéfiniment au jeu!
 """
 
 import random
