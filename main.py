@@ -7,21 +7,34 @@ tu peut jouer indéfiniment au jeu!
 
 import random
 
-
 jouer = True
 
 
-while jouer:
-    borne_min = 0
-    borne_max = 100
+def bornes(valeur_borne):
+    """
 
+    :param valeur_borne:
+    :return: chiffre_devinette pour
+    """
+    chiffre_devinette = int(input("\nveuillez inscrire la borne " + valeur_borne + " pour la devinette\n-->"))
+
+    return chiffre_devinette
+
+
+while jouer:
+
+    borne_min = bornes("minimale")
+    borne_max = bornes("maximale")
+
+    print(borne_min)
+    print(borne_max)
     number = random.randint(borne_min, borne_max)
     nbr_essai = 0
 
-# plus tard je donnera la possibilité de choisir les bornes
+    # plus tard je donnera la possibilité de choisir les bornes
     print("J'ai choisi un nombre entre " + str(borne_min) + " et " + str(borne_max) + ". À vous de le trouver!")
 
-# Merci Cabana
+    # Merci Cabana
     while (answer := int(input("\nInsérez votre réponse ici! \n-->"))) != number:
 
         if answer < number:
@@ -31,7 +44,7 @@ while jouer:
             print("la réponse est plus petite!")
 
         nbr_essai = nbr_essai + 1
-
+    nbr_essai = nbr_essai + 1
     print("Voilà la bonne réponse! C'était bien " + str(number) + "!")
     print("Vous avez réussi en " + str(nbr_essai) + " essai(s)!")
     leave = input("\n\nVoulez-vous jouer encore? y/n\n-->")
