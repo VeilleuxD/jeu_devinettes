@@ -2,23 +2,23 @@
 nom: David A. Veilleux
 Groupe: 405
 Description: Un petit jeu ou le joueur doit deviner le nombre choisi aléatoirement entre 1 et 100.
-tu peut jouer indéfiniment au jeu!
-"""
+tu peut jouer indéfiniment au jeu! """
 
 import random
 
 jouer = True
 
 
-def bornes(valeur_borne):
+def bornes(description_borne):
     """
 
-    :param valeur_borne:
-    :return: chiffre_devinette pour
-    """
-    chiffre_devinette = int(input("\nveuillez inscrire la borne " + valeur_borne + " pour la devinette\n-->"))
+    :param description_borne:
+    :return: chiffre_devinette pour déterminer la valeur des bornes
 
-    return chiffre_devinette
+    """
+    valeur_borne = int(input("\nveuillez inscrire la borne " + description_borne + " pour la devinette\n-->"))
+
+    return valeur_borne
 
 
 while jouer:
@@ -26,8 +26,6 @@ while jouer:
     borne_min = bornes("minimale")
     borne_max = bornes("maximale")
 
-    print(borne_min)
-    print(borne_max)
     number = random.randint(borne_min, borne_max)
     nbr_essai = 0
 
